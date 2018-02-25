@@ -1,8 +1,8 @@
 class Sorter {
   constructor() {
     // your implementation
-    this.array = new Array();
-    this.compareNumber = (a, b) => a - b;
+    this.array = [];
+    // this.compareNumber = (a, b) => a - b;
   }
 
   add(element) {
@@ -12,7 +12,7 @@ class Sorter {
 
   at(index) {
     // your implementation
-    return this.array[index]
+    return this.array[index];
   }
 
   get length() {
@@ -33,12 +33,19 @@ class Sorter {
     }
 
     mass_sort.sort(this.compareNumber);
-    indices.sort(this.compareNumber);
+    indices.sort();
     
     for(var i=0; i< indices.length; i++){
       this.array[indices[i]] = mass_sort[i]
     }
+
   }
+
+  compareNumber(a, b){
+    return a - b;
+  }
+
+
 
   setComparator(compareFunction) {
     // your implementation
